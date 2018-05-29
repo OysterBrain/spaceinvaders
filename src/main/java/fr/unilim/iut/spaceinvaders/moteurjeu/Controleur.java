@@ -41,7 +41,6 @@ public class Controleur implements KeyListener {
 		return (aRetourner);
 	}
 
-	@Override
 	/**
 	 * met a jour les commandes en fonctions des touches appuyees
 	 */
@@ -72,7 +71,7 @@ public class Controleur implements KeyListener {
 
 	}
 
-	@Override
+	
 	/**
 	 * met a jour les commandes quand le joueur relache une touche
 	 */
@@ -94,7 +93,7 @@ public class Controleur implements KeyListener {
 
 	}
 
-	@Override
+	
 	/**
 	 * ne fait rien
 	 */
