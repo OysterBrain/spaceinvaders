@@ -1,11 +1,10 @@
-package fr.unilim.iut.spaceinvaders.moteurjeu;
 
 
+import fr.unilim.iut.spaceinvaders.moteurjeu.MoteurGraphique;
 
-import model.Constante;
-import model.DessinSpaceInvaders;
+
 import model.SpaceInvaders;
-
+import model.*;
 public class Main {
 	public static void main(String[] args) throws InterruptedException {
 

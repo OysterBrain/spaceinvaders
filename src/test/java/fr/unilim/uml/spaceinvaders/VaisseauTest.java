@@ -3,6 +3,9 @@ package fr.unilim.uml.spaceinvaders;
 import org.junit.Test;
 
 import fr.unilim.iut.spaceinvaders.utils.MissileException;
+import model.Dimension;
+import model.Position;
+import model.Vaisseau;
 
 public class VaisseauTest {
 
