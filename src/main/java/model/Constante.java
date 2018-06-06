@@ -22,5 +22,5 @@ public class Constante {
 	   public static final char MARQUE_ENVAHISSEUR = 'E';		
 	   public static final int ENVAHISSEUR_LONGUEUR = 15;
 	   public static final int ENVAHISSEUR_HAUTEUR = 5;
-	   public static final int VITESSE_ENVAHISSEUR = 2;
+	   public static final int VITESSE_ENVAHISSEUR = 5;
 }

@@ -1,13 +1,14 @@
 package model;
 
 import fr.unilim.iut.spaceinvaders.moteurjeu.Commande;
+
 import fr.unilim.iut.spaceinvaders.moteurjeu.Jeu;
 import fr.unilim.iut.spaceinvaders.utils.DebordementEspaceJeuException;
 import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 import fr.unilim.iut.spaceinvaders.utils.MissileException;
 
 import model.Collision;
-import fr.unilim.iut.spaceinvaders.moteurjeu.*;
+
 public class SpaceInvaders implements Jeu {
 	
 	
@@ -248,11 +249,14 @@ public class SpaceInvaders implements Jeu {
 		if(this.aUnEnvahisseur()) {
 		deplacerEnvahisseur();
 		}
-		if (this.aUnMissile() && this.aUnEnvahisseur() && ilYACollision(this.envahisseur, this.missile)) {
+		if (EnvahisseurDoitEtreSupprime()) {
 			supprimerMissile();
 			supprimerEnvahisseur();
 			System.out.println("Fin de la partie, vous avez touché");
 		}
+	}
+	private boolean EnvahisseurDoitEtreSupprime() {
+		return this.aUnMissile() && this.aUnEnvahisseur() && ilYACollision(this.envahisseur, this.missile);
 	}
 
 
