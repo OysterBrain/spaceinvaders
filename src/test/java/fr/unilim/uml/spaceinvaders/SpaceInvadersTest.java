@@ -528,4 +528,37 @@ public class SpaceInvadersTest {
 	       "...............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	}
 	 
+	 
+	 @Test
+		public void test_CoinBasDroitDeuxiemeSpriteTouchePremierSprite() {
+			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(2,2),new Position(5,9), 2);
+			spaceinvaders.positionnerEnvahisseur(new Dimension(2,2), new Position(4,8), 3);
+			
+			assertEquals(true, spaceinvaders.ilYACollision(spaceinvaders.getEnvahisseur(), spaceinvaders.recupererVaisseau()));
+		}
+		
+		@Test
+		public void test_CoinBasGaucheDeuxiemeSpriteTouchePremierSprite() {
+			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(2,2),new Position(5,9), 2);
+			spaceinvaders.positionnerEnvahisseur(new Dimension(2,2), new Position(6,8), 3);
+			
+			assertEquals(true, spaceinvaders.ilYACollision(spaceinvaders.getEnvahisseur(), spaceinvaders.recupererVaisseau()));
+	}
+	  @Test
+		public void test_CoinHautDroitDeuxiemeSpriteTouchePremierSprite() {
+			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(2,2),new Position(5,8), 2);
+			spaceinvaders.positionnerEnvahisseur(new Dimension(2,2), new Position(4,9), 3);
+			
+			assertEquals(true, spaceinvaders.ilYACollision(spaceinvaders.getEnvahisseur(), spaceinvaders.recupererVaisseau()));
+		}
+		
+		@Test
+		public void test_CoinHautGaucheDeuxiemeSpriteTouchePremierSprite() {
+			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(2,2),new Position(5,8), 2);
+			spaceinvaders.positionnerEnvahisseur(new Dimension(2,2), new Position(6,9), 3);
+			
+			assertEquals(true, spaceinvaders.ilYACollision(spaceinvaders.getEnvahisseur(), spaceinvaders.recupererVaisseau()));
+		}
+		
+		
 }

@@ -178,18 +178,19 @@ public class SpaceInvaders implements Jeu {
 	public void deplacerMissile() {
 		this.missile.deplacerVerticalementVers(Direction.HAUT_ECRAN);
 		
-		if (missileSortDeLEcran())
+		if (missileEstAExterieurEcran())
 			supprimerMissile();
 	}
 
-	private boolean missileSortDeLEcran() {
+	private boolean missileEstAExterieurEcran() {
 		return this.missile.ordonneeLaPlusHaute() < 0;
 	}
 	
-	public boolean collisionDetectee(Sprite premierSprite, Sprite deuxiemeSprite) {
-		Collision collision = new Collision (premierSprite, deuxiemeSprite);
+	public boolean ilYACollision(Sprite Sprite1, Sprite Sprite2) {
+		Collision collision = new Collision (Sprite1, Sprite2);
 		
 		return collision.detecterCollision(this);
+		
 	}
 	
 	public void initialiserJeu() {
@@ -205,34 +206,6 @@ public class SpaceInvaders implements Jeu {
 
 	public boolean etreFini() {
 		return false; 
-	}
-
-	
-    public void evoluer(Commande commandeUser) {
-				
-		if (commandeUser.gauche) {
-			deplacerVaisseauVersLaGauche();
-		}
-		
-		if (commandeUser.droite) {
-			deplacerVaisseauVersLaDroite();
-		}
-		
-		if (commandeUser.tir && !this.aUnMissile()) {
-			tirerUnMissile(new Dimension(Constante.MISSILE_LONGUEUR, Constante.MISSILE_HAUTEUR), Constante.VITESSE_MISSILE);
-		}
-		
-		if (this.aUnMissile()) {
-			deplacerMissile();
-		}
-		
-		deplacerEnvahisseur();
-		
-		if (this.aUnMissile() && this.aUnEnvahisseur() && collisionDetectee(this.envahisseur, this.missile)) {
-			supprimerMissile();
-			supprimerEnvahisseur();
-			System.out.println("Fin de la partie");
-		}
 	}
 
 	private void deplacerEnvahisseur() {
@@ -255,6 +228,34 @@ public class SpaceInvaders implements Jeu {
 	private boolean envahisseurEstColleADroite() {
 		return envahisseur.abscisseLaPlusADroite() == this.longueur-1;
 }
+    public void evoluer(Commande commandeUser) {
+				
+		if (commandeUser.gauche) {
+			deplacerVaisseauVersLaGauche();
+		}
+		
+		if (commandeUser.droite) {
+			deplacerVaisseauVersLaDroite();
+		}
+		
+		if (commandeUser.tir && !this.aUnMissile()) {
+			tirerUnMissile(new Dimension(Constante.MISSILE_LONGUEUR, Constante.MISSILE_HAUTEUR), Constante.VITESSE_MISSILE);
+		}
+		
+		if (this.aUnMissile()) {
+			deplacerMissile();
+		}
+		
+		deplacerEnvahisseur();
+		
+		if (this.aUnMissile() && this.aUnEnvahisseur() && ilYACollision(this.envahisseur, this.missile)) {
+			supprimerMissile();
+			supprimerEnvahisseur();
+			System.out.println("Fin de la partie");
+		}
+	}
+
+
 
 
 		 
