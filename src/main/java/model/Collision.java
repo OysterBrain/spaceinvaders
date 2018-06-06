@@ -7,9 +7,9 @@ public class Collision {
 	private Sprite sprite1;
 	private Sprite sprite2;
 	
-	public Collision(Sprite premierSprite, Sprite deuxiemeSprite) {
-		this.sprite1 = premierSprite;
-		this.sprite2 = deuxiemeSprite;
+	public Collision(Sprite Sprite1, Sprite Sprite2) {
+		this.sprite1 = Sprite1;
+		this.sprite2 = Sprite2;
 	}
 
 	public boolean detecterCollision(SpaceInvaders spaceInvaders) {

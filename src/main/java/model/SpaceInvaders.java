@@ -7,7 +7,7 @@ import fr.unilim.iut.spaceinvaders.utils.HorsEspaceJeuException;
 import fr.unilim.iut.spaceinvaders.utils.MissileException;
 
 import model.Collision;
-
+import fr.unilim.iut.spaceinvaders.moteurjeu.*;
 public class SpaceInvaders implements Jeu {
 	
 	
@@ -203,7 +203,7 @@ public class SpaceInvaders implements Jeu {
 	    positionnerEnvahisseur(dimensionEnvahisseur, positionEnvahisseur, Constante.VITESSE_ENVAHISSEUR);
     }
 	
-
+	
 	public boolean etreFini() {
 		return false; 
 	}
@@ -245,13 +245,13 @@ public class SpaceInvaders implements Jeu {
 		if (this.aUnMissile()) {
 			deplacerMissile();
 		}
-		
+		if(this.aUnEnvahisseur()) {
 		deplacerEnvahisseur();
-		
+		}
 		if (this.aUnMissile() && this.aUnEnvahisseur() && ilYACollision(this.envahisseur, this.missile)) {
 			supprimerMissile();
 			supprimerEnvahisseur();
-			System.out.println("Fin de la partie");
+			System.out.println("Fin de la partie, vous avez touché");
 		}
 	}
 

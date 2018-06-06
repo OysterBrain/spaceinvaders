@@ -30,7 +30,11 @@ public class DessinSpaceInvaders implements DessinJeu {
 				Envahisseur envahisseur = this.jeu.getEnvahisseur();
 				this.dessinerUnEnvahisseur(envahisseur, im);
 			}
+			
 		}
+
+		
+
 
 		private void dessinerUnVaisseau(Vaisseau vaisseau, BufferedImage im) {
 			Graphics2D crayon = (Graphics2D) im.getGraphics();

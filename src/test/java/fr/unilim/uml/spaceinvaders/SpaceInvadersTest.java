@@ -531,31 +531,31 @@ public class SpaceInvadersTest {
 	 
 	 @Test
 		public void test_CoinBasDroitDeuxiemeSpriteTouchePremierSprite() {
-			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(2,2),new Position(5,9), 2);
-			spaceinvaders.positionnerEnvahisseur(new Dimension(2,2), new Position(4,8), 3);
+			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(2,2),new Position(3,7), 2);
+			spaceinvaders.positionnerEnvahisseur(new Dimension(2,2), new Position(2,6), 3);
 			
 			assertEquals(true, spaceinvaders.ilYACollision(spaceinvaders.getEnvahisseur(), spaceinvaders.recupererVaisseau()));
 		}
 		
 		@Test
 		public void test_CoinBasGaucheDeuxiemeSpriteTouchePremierSprite() {
-			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(2,2),new Position(5,9), 2);
-			spaceinvaders.positionnerEnvahisseur(new Dimension(2,2), new Position(6,8), 3);
+			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(2,2),new Position(3,7), 2);
+			spaceinvaders.positionnerEnvahisseur(new Dimension(2,2), new Position(4,6), 3);
 			
 			assertEquals(true, spaceinvaders.ilYACollision(spaceinvaders.getEnvahisseur(), spaceinvaders.recupererVaisseau()));
 	}
 	  @Test
 		public void test_CoinHautDroitDeuxiemeSpriteTouchePremierSprite() {
-			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(2,2),new Position(5,8), 2);
-			spaceinvaders.positionnerEnvahisseur(new Dimension(2,2), new Position(4,9), 3);
+			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(2,2),new Position(3,6), 2);
+			spaceinvaders.positionnerEnvahisseur(new Dimension(2,2), new Position(2,7), 3);
 			
 			assertEquals(true, spaceinvaders.ilYACollision(spaceinvaders.getEnvahisseur(), spaceinvaders.recupererVaisseau()));
 		}
 		
 		@Test
 		public void test_CoinHautGaucheDeuxiemeSpriteTouchePremierSprite() {
-			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(2,2),new Position(5,8), 2);
-			spaceinvaders.positionnerEnvahisseur(new Dimension(2,2), new Position(6,9), 3);
+			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(2,2),new Position(3,6), 2);
+			spaceinvaders.positionnerEnvahisseur(new Dimension(2,2), new Position(4,7), 3);
 			
 			assertEquals(true, spaceinvaders.ilYACollision(spaceinvaders.getEnvahisseur(), spaceinvaders.recupererVaisseau()));
 		}
